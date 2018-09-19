@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title Tapestry EUC Dashboard
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    link(rel='stylesheet', href='responsive.css')
+    script(src='timer.js')
+    script(src='table1.js')
+    script(src='table2.js')
+    style.
+      body {
+        background-color: #215272;
+      }
+  body
+    iframe(allowtransparency='true', style='background: #FFFFFF;', src='charts.html', height='500', scrolling='no', frameborder='0', width='100%')
+    .container
+      .timer
+      .slideshow
+        .slide
+          iframe(scrolling='no', src='incs.html ', frameborder='0', height='45%', width='100%')
+        .slide
+          iframe(src='tasks.html', scrolling='no', height='45%', frameborder='0', width='111%')
+    .row
+      .col-3.menu
+        ul
+          li(style='position:absolute;top:130px;width:5%;height:20%;left:+3%;font-size:15px;')
+            | Total Incidents 
+            #thediv(style='background-color:#d1c82b;font-size:25px; color: blue;')
+          li(style='position:absolute;top:130px;width:5%;height:20%;left:82%;font-size:15px;')
+            | Total Tasks 
+            #tasks(style='background-color:#d1c82b;font-size:25px; color: blue;')
+    .footer

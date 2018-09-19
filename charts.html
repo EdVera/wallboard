@@ -1,109 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head><title>Tapestry EUC Dashboard</title>
-<meta http-equiv="refresh" content="1800">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-
-<link rel="stylesheet" href="responsive.css">
-<script src="incs.js"></script>
-<script src="tasks.js"></script>
-
-</head>
-
-<div   style="border:none;-moz-box-shadow: 5px 10px  8px  rgba(0,0,0,0.6);-webkit-box-shadow: 10px 10px 10px  rgba(0,0,0,0.6);"class="header" >
-  <center>
-    
-         <h1 id="changeText" style="position:absolute;top:-2%;right:28%;"></h1>
-           <svg height="210" width="500">
-            </center>
-         </div>
-
-		 
-		<script>
-var text = [ "Open Requests – By Status", "Open Incidents – By Status and  Priority","Open Incidents Split by EUC Team Members"];
-var counter = 0;
-var elem = document.getElementById("changeText");
-var inst = setInterval(change, 9000);
-
-function change() {
-  elem.innerHTML = text[counter];
-  counter++;
-  if (counter >= text.length) {
-    counter = 0;
-    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
-  }
-}
-
-</script>		
-
-
-
-<script>
-/*function updateClock() {
-    var now = new Date(), 
-        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
-        time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds(), 
-
-        date = [now.getDate(), 
-                months[now.getMonth()],
-                now.getFullYear()].join(' ');
-
-    
-    document.getElementById('time').innerHTML = [  date, time].join(' / ');
-
-    setTimeout(updateClock, 1);
-}
-updateClock(); */
-</script>
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1800">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <link rel="stylesheet" href="responsive.css">
+    <script src="incs.js"></script>
+    <script src="tasks.js"></script>
+  </head>
+  <body>
+    <div class="header" style="border:none;-moz-box-shadow: 5px 10px  8px  rgba(0,0,0,0.6);-webkit-box-shadow: 10px 10px 10px  rgba(0,0,0,0.6);">
+      <center>
+        <h1 id="changeText" style="position:absolute;top:-2%;right:28%;"></h1>
+        <svg height="210" width="500"></svg>
+      </center>
+    </div>
+    <script>
+      var text = [ "Open Requests – By Status", "Open Incidents – By Status and  Priority","Open Incidents Split by EUC Team Members"];
+      var counter = 0;
+      var elem = document.getElementById("changeText");
+      var inst = setInterval(change, 9000);
+      function change() {
+      elem.innerHTML = text[counter];
+      counter++;
+      if (counter >= text.length) {
+      counter = 0;
+      // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+      }
+      }
+    </script>
+    <script>
+      /*function updateClock() {
+      var now = new Date(),
+      months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds(),
+      date = [now.getDate(),
+      months[now.getMonth()],
+      now.getFullYear()].join(' ');
+      document.getElementById('time').innerHTML = [  date, time].join(' / ');
+      setTimeout(updateClock, 1);
+      }
+      updateClock(); */
+    </script>
     <div class="row">
-       <div hidden class="col-3 menu">
-                <ul>
-                 <li style="position:absolute;top:90%;width:7%;left:0%;">Total Incidents <div style="background-color:#d1c82b;font-size:20px; color: blue;" id="thediv">
-                    <li style="position:absolute;top:90%;width:7%;left:93%;">Total Tasks <div style="background-color:#d1c82b;font-size:20px; color: blue;" id="tasks">
-                        </li>
-                          </div>
-                       </div>
-               
-  
- 
-
-<div class="w3-content w3-section" style="max-width:900px">
-
-
-
-         <div   class="mySlides w3-animate-fading" style="width: 1500px; height: 500px;position:absolute;left:-15%;top:-6%;z-index:-999; " id="chart_div"></div>
-
-
-         <div   class="mySlides w3-animate-fading" style="width: 1500px; height: 500px;position:absolute;left:-12%;top:-6%;z-index:-999;" id="DivChart"></div>
-		 
-		 <div   class="mySlides w3-animate-fading" style="width: 1500px; height: 500px;position:absolute;left:-12%;top:-0%;z-index:-999;"  id="bar_chart"></div>
-
- 
-
-</div>
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 9000);    
-}
-</script>
-   
- </body>
+      <div class="col-3 menu" hidden="">
+        <ul>
+          <li style="position:absolute;top:90%;width:7%;left:0%;">Total Incidents 
+            <div id="thediv" style="background-color:#d1c82b;font-size:20px; color: blue;"></div>
+          </li>
+          <li style="position:absolute;top:90%;width:7%;left:93%;">Total Tasks 
+            <div id="tasks" style="background-color:#d1c82b;font-size:20px; color: blue;"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-content w3-section" style="max-width:900px">
+      <div class="mySlides w3-animate-fading" id="chart_div" style="width: 200px; height: 500px;position:absolute;left:-15%;top:-6%;z-index:-999; "></div>
+      <div class="mySlides w3-animate-fading" id="DivChart" style="width: 200px; height: 500px;position:absolute;left:-12%;top:-6%;z-index:-999;"></div>
+      <div class="mySlides w3-animate-fading" id="bar_chart" style="width: 200px; height: 500px;position:absolute;left:-12%;top:-0%;z-index:-999;"></div>
+    </div>
+    <script>
+      var myIndex = 0;
+      carousel();
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 9000);
+      }
+    </script>
+  </body>
 </html>

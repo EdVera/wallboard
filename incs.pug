@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title Tapestry EUC Dashboard
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+        link(rel='stylesheet', href='responsive.css')
+        script(src='table1.js')
+        script(type='text/javascript').
+            //<!--
+            function pageScroll() {
+            window.scrollBy(0,1);
+            scrolldelay = setTimeout(pageScroll,100);
+            }
+            //-->
+    body(onload='pageScroll()')
+        .row
+            .col-3.menu
+                ul
+                    li(style='position:fixed;top: 300px;')
+                    | Total Incidents 
+                    #thediv(style='background-color:#d1c82b;font-size:20px; color: blue;')
+        table#table.table(style='position:absolute;right:10%;')
+            tbody
+                tr
+                    th(style='position:sticky;') Inc State
+                    th(style='position:sticky;') Inc Number
+                    th(style='position:sticky;') Created On
+                    th(style='position:sticky;') Description
+                    th(style='position:sticky;') Priority
+                    th(style='position:sticky;') Assignment Group
+                    th(style='position:sticky;') Assigned To
+                    th(style='position:sticky;') Made SLA

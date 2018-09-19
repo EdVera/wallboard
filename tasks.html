@@ -1,71 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head><title>Tapestry EUC Dashboard</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
-<link rel="stylesheet" href="responsive.css">
-<script src="table2.js"></script>
-
-</head>
-
-<script type="text/javascript">
-
-
-
-//<!--
-
-function pageScroll() {
-    window.scrollBy(0,1);
-    scrolldelay = setTimeout(pageScroll,100);
-}
-
-//-->
-
-</script>
-
-
-
-<body onload="pageScroll()">
-
-
-
- <div class="row">
-
-<div class="col-3 menu">
-<ul>
-<li hidden style="position:fixed;top:-3%;">Total Incidents <div style="background-color:#d1c82b;font-size:20px; color: blue;" id="tasks">
-</li>
-
-</div>
-</div>
-
-
-
-
-
-
-<table id="tablez" style="position:absolute;right:10%;" class="table"  >
-
-
-<th style="position:sticky;">Task State</th>
-<th style="position:sticky;">Task Number</th>
-<th style="position:sticky;">Created On</th>
-<th style="position:sticky;">Description</th>
-<th style="position:sticky;">Priority</th>
-<th style="position:sticky;">Assignment Group</th>
-<th style="position:sticky;">Assigned To</th>
-<th style="position:sticky;">Made SLA</th>
-<th style="position:sticky;">Business Time Left</th>
-
-
-  
-</table>
-
-
-
-
-
-</body>
+  <head>
+    <title>Tapestry EUC Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="responsive.css">
+    <script src="table2.js"></script>
+    <script type="text/javascript">
+      //<!--
+      function pageScroll() {
+      window.scrollBy(0,1);
+      scrolldelay = setTimeout(pageScroll,100);
+      }
+      //-->
+    </script>
+  </head>
+  <body onload="pageScroll()">
+    <div class="row">
+      <div class="col-3 menu">
+        <ul>
+          <li hidden="" style="position:fixed;top:-3%;">Total Incidents 
+            <div id="tasks" style="background-color:#fff;font-size:20px; color: blue;"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <table class="table" id="tablez" style="position:absolute;right:10%;">
+      <tbody>
+        <tr>
+          <th style="position:sticky;">Task State</th>
+          <th style="position:sticky;">Task Number</th>
+          <th style="position:sticky;">Created On</th>
+          <th style="position:sticky;">Description</th>
+          <th style="position:sticky;">Priority</th>
+          <th style="position:sticky;">Assignment Group</th>
+          <th style="position:sticky;">Assigned To</th>
+          <th style="position:sticky;">Made SLA</th>
+          <th style="position:sticky;">Business Time Left</th>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
