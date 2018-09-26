@@ -1,34 +1,20 @@
 doctype html
 html
   head
-    title Tapestry EUC Dashboard
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    link(rel='stylesheet', href='responsive.css')
-    script(src='timer.js')
-    script(src='table1.js')
-    script(src='table2.js')
-    style.
-      body {
-        background-color: #215272;
-      }
+    title Incidents
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    link(href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css", rel="stylesheet")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css')
   body
-    iframe(allowtransparency='true', style='background: #FFFFFF;', src='charts.html', height='500', scrolling='no', frameborder='0', width='100%')
-    .container
-      .timer
-      .slideshow
-        .slide
-          iframe(scrolling='no', src='incs.html ', frameborder='0', height='45%', width='100%')
-        .slide
-          iframe(src='tasks.html', scrolling='no', height='45%', frameborder='0', width='111%')
+    iframe(allowtransparency='true', style='background: #FFFFFF;', src='charts.html', height='500', scrolling='no', frameborder='0', width='95%')
     .row
-      .col-3.menu
-        ul
-          li(style='position:absolute;top:130px;width:5%;height:20%;left:+3%;font-size:15px;')
-            | Total Incidents 
-            #thediv(style='background-color:#d1c82b;font-size:25px; color: blue;')
-          li(style='position:absolute;top:130px;width:5%;height:20%;left:82%;font-size:15px;')
-            | Total Tasks 
-            #tasks(style='background-color:#d1c82b;font-size:25px; color: blue;')
-    .footer
+      .col.s12.m6(style="border-right:1px solid black")
+        iframe(scrolling='no', src='incidentes.html ', frameborder='0', height='500', width='100%')
+      .col.s12.m6(style="border-left:1px solid black")
+        iframe(src='tareas.html', scrolling='no', height='500', frameborder='0', width='100%')
+  script(src='timer.js')

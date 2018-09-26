@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Incidents</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+  </head>
+  <body onload="pageScroll()">
+    <div class="row">
+      <div class="col s1">
+        <p>Total Incidents </p>
+        <div id="thediv" style="background-color:#d1c82b;font-size:20px; color: blue;text-align: center"></div>
+      </div>
+    </div>
+    <table class="striped" id="table">
+      <tbody>
+        <tr>
+          <th style="position:sticky;">Inc State</th>
+          <th style="position:sticky;">Inc Number</th>
+          <th style="position:sticky;">Created On</th>
+          <th style="position:sticky;">Description</th>
+          <th style="position:sticky;">Priority</th>
+          <th style="position:sticky;">Assignment Group</th>
+          <th style="position:sticky;">Assigned To</th>
+          <th style="position:sticky;">Made SLA</th>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="table1.js"></script>
+  <script type="text/javascript">
+    //<!--
+    function pageScroll() {
+        window.scrollBy(0,1);
+        scrolldelay = setTimeout(pageScroll,100);
+    }
+    
+    $('table#table').floatThead({
+        position: 'fixed',
+        scrollingTop:65
+    });
+    //-->
+  </script>
+</html>

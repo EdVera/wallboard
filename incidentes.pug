@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        title Incidents
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet")
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+        link(href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css", rel="stylesheet")
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css')
+    body(onload='pageScroll()')
+        .row
+            .col.s1
+                p Total Incidents 
+                #thediv(style='background-color:#d1c82b;font-size:20px; color: blue;text-align: center')
+        table#table.striped
+            tbody
+                tr
+                    th(style='position:sticky;') Inc State
+                    th(style='position:sticky;') Inc Number
+                    th(style='position:sticky;') Created On
+                    th(style='position:sticky;') Description
+                    th(style='position:sticky;') Priority
+                    th(style='position:sticky;') Assignment Group
+                    th(style='position:sticky;') Assigned To
+                    th(style='position:sticky;') Made SLA
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js')
+    script(src='table1.js')
+    script(type='text/javascript').
+        //<!--
+        function pageScroll() {
+            window.scrollBy(0,1);
+            scrolldelay = setTimeout(pageScroll,100);
+        }
+
+        $('table#table').floatThead({
+            position: 'fixed',
+            scrollingTop:65
+        });
+        //-->
